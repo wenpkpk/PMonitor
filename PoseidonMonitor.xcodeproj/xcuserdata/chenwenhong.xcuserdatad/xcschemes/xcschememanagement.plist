@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>PoseidonMonitor.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Test.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A2E9D389170BD37D00B11F5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D12C2D601AD6B8580052C187</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D12C2D6A1AD6B8580052C187</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D14B079D1B14248A00032AB7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D14B07B51B14248A00032AB7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
