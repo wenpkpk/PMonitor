@@ -22,17 +22,22 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    [[PMService shareInstance] start];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    [[PMService shareInstance] start];
 
     PMLogBiz(@"H5-Normal", @"xxx%@", @"dfddfd");
     PMLogErrorBiz(@"H5-Error", @"xxx%@", @"dfddfd");
     PMLogWarnBiz(@"H5-Warn", @"xxx%@", @"dfddfd");
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"d"
+                                                 message:@"d"
+                                                delegate:nil
+                                       cancelButtonTitle:@"cancel"
+                                       otherButtonTitles:nil, nil];
+    [av show];
 }
 
 @end

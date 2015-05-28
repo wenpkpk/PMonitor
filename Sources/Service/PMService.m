@@ -88,7 +88,7 @@ static PMService *shareInstance = nil;
 {
     if (!_rootView) {
         _rootView = [[PMMonitorView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _rootView.tag = 999;
+        _rootView.tag = kMonitorViewTag;
         _rootView.delegate = (id)self.rootViewController;
     }
     
@@ -101,7 +101,7 @@ static PMService *shareInstance = nil;
     if (!_pmWindow) {
         _pmWindow = [[PMWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
-        _pmWindow.windowLevel = CGFLOAT_MAX;
+        _pmWindow.windowLevel = UIWindowLevelAlert - 0.1f;
         _pmWindow.rootViewController = nav;
     }
     
