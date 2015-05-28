@@ -13,7 +13,6 @@
 @interface PMService (Private)
 
 @property(nonatomic, strong) PMWindow               *pmWindow;
-@property(nonatomic, strong) PMMonitorView          *rootView;
 
 
 + (BOOL)isEnable;

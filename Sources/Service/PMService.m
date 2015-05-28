@@ -23,11 +23,9 @@ static NSMutableArray       *logWaitingArray = nil;
 
 @interface PMService ()
 
-@property(nonatomic, strong) PMRootViewController   *rootViewController;
 @property(nonatomic, strong) PMWindow               *pmWindow;
 @property(nonatomic, strong) UIWindow               *appWindow;
 @property(nonatomic, assign) BOOL                   isEnable;
-@property(nonatomic, strong) PMMonitorView          *rootView;
 
 @end
 
@@ -65,16 +63,6 @@ static PMService *shareInstance = nil;
     return self;
 }
 
-- (PMRootViewController *)rootViewController
-{
-    if (!_rootViewController) {
-        _rootViewController = [[PMRootViewController alloc] init];
-        _rootViewController.pmWindow = self.pmWindow;
-    }
-    
-    return _rootViewController;
-}
-
 - (UIWindow *)appWindow
 {
     if (!_appWindow) {
@@ -84,25 +72,11 @@ static PMService *shareInstance = nil;
     return _appWindow;
 }
 
-- (PMMonitorView *)rootView
-{
-    if (!_rootView) {
-        _rootView = [[PMMonitorView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _rootView.tag = kMonitorViewTag;
-        _rootView.delegate = (id)self.rootViewController;
-    }
-    
-    return _rootView;
-}
-
-
 - (PMWindow *)pmWindow
 {
     if (!_pmWindow) {
-        _pmWindow = [[PMWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
+        _pmWindow = [[PMWindow alloc] initWithFrame:CGRectMake(2, CGRectGetHeight([UIScreen mainScreen].bounds) - 100, 80, 80)];
         _pmWindow.windowLevel = UIWindowLevelAlert - 0.1f;
-        _pmWindow.rootViewController = nav;
     }
     
     return _pmWindow;
@@ -113,7 +87,7 @@ static PMService *shareInstance = nil;
 - (void)start
 {
     self.isEnable = YES;
-    [self.pmWindow addSubview:self.rootView];
+    self.pmWindow.backgroundColor = [UIColor clearColor];
     self.pmWindow.hidden = NO;
 }
 

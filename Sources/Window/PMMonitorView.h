@@ -13,12 +13,18 @@
 
 @interface PMMonitorView : UIView
 
-@property(nonatomic, weak) id<PMMonitorViewDelegate> delegate;
+@property(nonatomic, weak) id<PMMonitorViewDelegate>    delegate;
+
+@property(nonatomic, assign) BOOL                       showMenus;
 
 @end
 
 
 @protocol PMMonitorViewDelegate <NSObject>
+
+- (void)monitorView:(PMMonitorView *)monitorView didClickedDebug:(BOOL)isShow;
+
+@optional
 
 - (void)monitorView:(PMMonitorView *)monitorView didClickedLog:(BOOL)_;
 

@@ -173,7 +173,6 @@
 - (void)back
 {
     [super back];
-    [self.pmWindow resignKeyWindow];
 }
 
 /*

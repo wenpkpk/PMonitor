@@ -15,7 +15,7 @@
 @property(nonatomic, strong) UIButton   *logBtn;
 @property(nonatomic, strong) UIButton   *jsBtn;
 @property(nonatomic, strong) UIButton   *otherBtn;
-@property(nonatomic, assign) BOOL       showMenus;
+@property(nonatomic, strong) UIPanGestureRecognizer *panGesture;
 
 @end
 
@@ -34,20 +34,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        CGFloat pointY = self.center.y;
-        
         self.debugView = [[UIButton alloc] init];
-        self.debugView.frame  = CGRectMake(0, 0, 80, 80);
+        self.debugView.frame = CGRectMake(0, 0, 80, 80);
         [self.debugView setTitle:kMonitorViewTitle forState:UIControlStateNormal];
         self.debugView.layer.cornerRadius = 40;
         self.debugView.clipsToBounds = YES;
-        self.debugView.center = CGPointMake(self.center.x, pointY*4/3);
         self.debugView.backgroundColor = [UIColor purpleColor];
         [self addSubview:self.debugView];
         self.multipleTouchEnabled = NO;
         
-        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
-        [self.debugView addGestureRecognizer:panGesture];
+        self.panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+        [self addGestureRecognizer:self.panGesture];
+        self.panGesture.enabled = NO;
         
         [self.debugView addTarget:self
                            action:@selector(debugViewClicked:)
@@ -56,6 +54,11 @@
     }
     
     return self;
+}
+
+- (BOOL)isShowMenus
+{
+    return _showMenus;
 }
 
 - (UIButton *)logBtn
@@ -114,7 +117,8 @@
 {
     if (_showMenus != showMenus) {
         _showMenus = showMenus;
-        
+        self.panGesture.enabled = _showMenus;
+
         if (self.showMenus) {
             self.logBtn.hidden = !self.showMenus;
             self.jsBtn.hidden = !self.showMenus;
@@ -175,22 +179,22 @@
 {
     [self bringSubviewToFront:self.debugView];
     
-    CGPoint location = [sender locationInView:self];
+    CGPoint location = [sender locationInView:self.superview];
     //边界限制
     if (location.x < CGRectGetWidth(sender.view.frame) / 2.0f) {
         location.x = CGRectGetWidth(sender.view.frame) / 2.0f;
     }
     
-    if (location.x > CGRectGetWidth(self.frame) - CGRectGetWidth(sender.view.frame) / 2.0f) {
-        location.x = CGRectGetWidth(self.frame) - CGRectGetWidth(sender.view.frame) / 2.0f;
+    if (location.x > CGRectGetWidth(self.superview.frame) - CGRectGetWidth(sender.view.frame) / 2.0f) {
+        location.x = CGRectGetWidth(self.superview.frame) - CGRectGetWidth(sender.view.frame) / 2.0f;
     }
     
     if (location.y < CGRectGetHeight(sender.view.frame) / 2.0f) {
         location.y = CGRectGetHeight(sender.view.frame) / 2.0f;
     }
     
-    if (location.y > CGRectGetHeight(self.frame) - CGRectGetHeight(sender.view.frame) / 2.0f) {
-        location.y = CGRectGetHeight(self.frame) - CGRectGetHeight(sender.view.frame) / 2.0f;
+    if (location.y > CGRectGetHeight(self.superview.frame) - CGRectGetHeight(sender.view.frame) / 2.0f) {
+        location.y = CGRectGetHeight(self.superview.frame) - CGRectGetHeight(sender.view.frame) / 2.0f;
     }
     
     sender.view.center = CGPointMake(location.x, location.y);
@@ -224,6 +228,9 @@
 - (void)debugViewClicked:(id)sender
 {
     self.showMenus = !self.showMenus;
+    if ([self.delegate respondsToSelector:@selector(monitorView:didClickedDebug:)]) {
+        [self.delegate monitorView:self didClickedDebug:self.isShowMenus];
+    }
 }
 
 - (void)logBtnClicked:(id)sender

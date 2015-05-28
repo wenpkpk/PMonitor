@@ -7,14 +7,8 @@
 //
 
 #import "PMRootViewController.h"
-#import "PMMonitorView.h"
-#import "PMLogViewController.h"
-#import "PMDataSourceFactory.h"
-#import "PMConfigFactory.h"
-#import "PMJSViewController.h"
-#import "PMService+Private.h"
 
-@interface PMRootViewController () <PMMonitorViewDelegate>
+@interface PMRootViewController ()
 
 @end
 
@@ -24,7 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
-    [self.pmWindow bringSubviewToFront:[PMService shareInstance].rootView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,48 +40,5 @@
 }
 */
 
-#pragma mark - delegate
-
-- (void)monitorView:(PMMonitorView *)monitorView didClickedLog:(BOOL)_
-{
-    PMLogViewController *vc = [[PMLogViewController alloc] initWithDataSource:[PMDataSourceFactory getPMLogDataSource] logConfig:[PMConfigFactory getPMLogConfig]];
-    vc.pmWindow = self.pmWindow;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)monitorView:(PMMonitorView *)monitorView didClickedJS:(BOOL)_
-{
-    // 检查当前vc 有没有webview
-    // 获取当前最后一个vc的webview
-    UINavigationController *nav = (id)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    UIWebView *wb = nil;
-    
-    if ([nav isKindOfClass:[UINavigationController class]]) {
-        UIViewController *vc = nav.viewControllers.lastObject;
-        for (UIView *subView in [vc.view subviews]) {
-            if ([subView isKindOfClass:[UIWebView class]]) {
-                wb = (id)subView;
-                break;
-            }
-        }
-    } else if ([nav isKindOfClass:[UITabBarController class]]) {
-        UIViewController *vc = [[(UITabBarController*)nav viewControllers] firstObject];
-        wb = [vc performSelector:@selector(wb) withObject:nil];
-    }
-    
-    if (!wb) {
-        return;
-    }
-    
-    PMJSViewController *vc = [[PMJSViewController alloc] initWithDataSource:[PMDataSourceFactory getPMJSCallDataSource] logConfig:[PMConfigFactory getPMJSCallLogConfig]];
-    vc.pmWindow = self.pmWindow;
-    vc.wb = wb;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)monitorView:(PMMonitorView *)monitorView didClickedOther:(BOOL)_
-{
-    
-}
 
 @end
