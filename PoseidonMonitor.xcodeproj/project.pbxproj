@@ -40,17 +40,21 @@
 		D110365A1ADBA4FB00C46099 /* PMMonitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D11036541ADBA4FB00C46099 /* PMMonitorView.m */; };
 		D110365B1ADBA4FB00C46099 /* PMWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D11036551ADBA4FB00C46099 /* PMWindow.h */; };
 		D110365C1ADBA4FB00C46099 /* PMWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D11036561ADBA4FB00C46099 /* PMWindow.m */; };
-		D110365D1ADBA4FB00C46099 /* UIWindow+Ex.h in Headers */ = {isa = PBXBuildFile; fileRef = D11036571ADBA4FB00C46099 /* UIWindow+Ex.h */; };
-		D110365E1ADBA4FB00C46099 /* UIWindow+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = D11036581ADBA4FB00C46099 /* UIWindow+Ex.m */; };
 		D11036621ADBA53600C46099 /* PMBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D11036601ADBA53600C46099 /* PMBaseViewController.h */; };
 		D11036631ADBA53600C46099 /* PMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11036611ADBA53600C46099 /* PMBaseViewController.m */; };
 		D11036671ADBA63D00C46099 /* PMService.h in Headers */ = {isa = PBXBuildFile; fileRef = D11036641ADBA63D00C46099 /* PMService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D11036681ADBA63D00C46099 /* PMService.m in Sources */ = {isa = PBXBuildFile; fileRef = D11036651ADBA63D00C46099 /* PMService.m */; };
 		D11036691ADBA63D00C46099 /* PMService+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D11036661ADBA63D00C46099 /* PMService+Private.h */; };
+		D11E02631B17241100609402 /* UINavigationController+Ex.h in Headers */ = {isa = PBXBuildFile; fileRef = D11E02611B17241100609402 /* UINavigationController+Ex.h */; };
+		D11E02641B17241100609402 /* UINavigationController+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = D11E02621B17241100609402 /* UINavigationController+Ex.m */; };
+		D11E02671B1724BC00609402 /* PMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D11E02651B1724BC00609402 /* PMUtils.h */; };
+		D11E02681B1724BC00609402 /* PMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D11E02661B1724BC00609402 /* PMUtils.m */; };
+		D11E026B1B173A8900609402 /* PMNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = D11E02691B173A8900609402 /* PMNavigationController.h */; };
+		D11E026C1B173A8900609402 /* PMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11E026A1B173A8900609402 /* PMNavigationController.m */; };
 		D12C2DD21AD7C4B10052C187 /* PoseidonMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = D12C2DD11AD7C4300052C187 /* PoseidonMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D14B07A31B14248A00032AB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D14B07A21B14248A00032AB7 /* main.m */; };
 		D14B07A61B14248A00032AB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D14B07A51B14248A00032AB7 /* AppDelegate.m */; };
-		D14B07A91B14248A00032AB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14B07A81B14248A00032AB7 /* ViewController.m */; };
+		D14B07A91B14248A00032AB7 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14B07A81B14248A00032AB7 /* WebViewController.m */; };
 		D14B07AC1B14248A00032AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14B07AA1B14248A00032AB7 /* Main.storyboard */; };
 		D14B07AE1B14248A00032AB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14B07AD1B14248A00032AB7 /* Images.xcassets */; };
 		D14B07B11B14248A00032AB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D14B07AF1B14248A00032AB7 /* LaunchScreen.xib */; };
@@ -109,21 +113,25 @@
 		D11036541ADBA4FB00C46099 /* PMMonitorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMonitorView.m; sourceTree = "<group>"; };
 		D11036551ADBA4FB00C46099 /* PMWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMWindow.h; sourceTree = "<group>"; };
 		D11036561ADBA4FB00C46099 /* PMWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMWindow.m; sourceTree = "<group>"; };
-		D11036571ADBA4FB00C46099 /* UIWindow+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Ex.h"; sourceTree = "<group>"; };
-		D11036581ADBA4FB00C46099 /* UIWindow+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Ex.m"; sourceTree = "<group>"; };
 		D11036601ADBA53600C46099 /* PMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBaseViewController.h; sourceTree = "<group>"; };
 		D11036611ADBA53600C46099 /* PMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBaseViewController.m; sourceTree = "<group>"; };
 		D11036641ADBA63D00C46099 /* PMService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMService.h; sourceTree = "<group>"; };
 		D11036651ADBA63D00C46099 /* PMService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMService.m; sourceTree = "<group>"; };
 		D11036661ADBA63D00C46099 /* PMService+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMService+Private.h"; sourceTree = "<group>"; };
+		D11E02611B17241100609402 /* UINavigationController+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Ex.h"; sourceTree = "<group>"; };
+		D11E02621B17241100609402 /* UINavigationController+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Ex.m"; sourceTree = "<group>"; };
+		D11E02651B1724BC00609402 /* PMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMUtils.h; sourceTree = "<group>"; };
+		D11E02661B1724BC00609402 /* PMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMUtils.m; sourceTree = "<group>"; };
+		D11E02691B173A8900609402 /* PMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNavigationController.h; sourceTree = "<group>"; };
+		D11E026A1B173A8900609402 /* PMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNavigationController.m; sourceTree = "<group>"; };
 		D12C2DD11AD7C4300052C187 /* PoseidonMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoseidonMonitor.h; sourceTree = "<group>"; };
 		D14B079E1B14248A00032AB7 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14B07A11B14248A00032AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D14B07A21B14248A00032AB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D14B07A41B14248A00032AB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D14B07A51B14248A00032AB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D14B07A71B14248A00032AB7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D14B07A81B14248A00032AB7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D14B07A71B14248A00032AB7 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D14B07A81B14248A00032AB7 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		D14B07AB1B14248A00032AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D14B07AD1B14248A00032AB7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D14B07B01B14248A00032AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -371,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				D11036421ADBA45500C46099 /* PMCommonDefine.h */,
+				D11E02651B1724BC00609402 /* PMUtils.h */,
+				D11E02661B1724BC00609402 /* PMUtils.m */,
 				D11036431ADBA45500C46099 /* PMDefine.h */,
 				D11036461ADBA48900C46099 /* PMConfigFactory.h */,
 				D11036471ADBA48900C46099 /* PMConfigFactory.m */,
@@ -385,10 +395,12 @@
 			children = (
 				D11036551ADBA4FB00C46099 /* PMWindow.h */,
 				D11036561ADBA4FB00C46099 /* PMWindow.m */,
-				D11036571ADBA4FB00C46099 /* UIWindow+Ex.h */,
-				D11036581ADBA4FB00C46099 /* UIWindow+Ex.m */,
 				D11036531ADBA4FB00C46099 /* PMMonitorView.h */,
 				D11036541ADBA4FB00C46099 /* PMMonitorView.m */,
+				D11E02611B17241100609402 /* UINavigationController+Ex.h */,
+				D11E02621B17241100609402 /* UINavigationController+Ex.m */,
+				D11E02691B173A8900609402 /* PMNavigationController.h */,
+				D11E026A1B173A8900609402 /* PMNavigationController.m */,
 			);
 			path = Window;
 			sourceTree = "<group>";
@@ -407,8 +419,8 @@
 			children = (
 				D14B07A41B14248A00032AB7 /* AppDelegate.h */,
 				D14B07A51B14248A00032AB7 /* AppDelegate.m */,
-				D14B07A71B14248A00032AB7 /* ViewController.h */,
-				D14B07A81B14248A00032AB7 /* ViewController.m */,
+				D14B07A71B14248A00032AB7 /* WebViewController.h */,
+				D14B07A81B14248A00032AB7 /* WebViewController.m */,
 				D14B07AA1B14248A00032AB7 /* Main.storyboard */,
 				D14B07AD1B14248A00032AB7 /* Images.xcassets */,
 				D14B07AF1B14248A00032AB7 /* LaunchScreen.xib */,
@@ -451,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11036451ADBA45500C46099 /* PMDefine.h in Headers */,
+				D11E02631B17241100609402 /* UINavigationController+Ex.h in Headers */,
 				D11036691ADBA63D00C46099 /* PMService+Private.h in Headers */,
 				D11036671ADBA63D00C46099 /* PMService.h in Headers */,
 				D11036321ADBA3D000C46099 /* PMRootViewController.h in Headers */,
@@ -459,7 +472,6 @@
 				D11036441ADBA45500C46099 /* PMCommonDefine.h in Headers */,
 				D11036621ADBA53600C46099 /* PMBaseViewController.h in Headers */,
 				D11036281ADBA3D000C46099 /* PMLogDataModel.h in Headers */,
-				D110365D1ADBA4FB00C46099 /* UIWindow+Ex.h in Headers */,
 				D11036591ADBA4FB00C46099 /* PMMonitorView.h in Headers */,
 				D11036261ADBA3D000C46099 /* PMLogConfig.h in Headers */,
 				D110362E1ADBA3D000C46099 /* PMLogViewController.h in Headers */,
@@ -468,9 +480,11 @@
 				D110365B1ADBA4FB00C46099 /* PMWindow.h in Headers */,
 				D11036201ADBA3D000C46099 /* PMJSCallDataSource.h in Headers */,
 				D11036301ADBA3D000C46099 /* PMLogTableViewCell.h in Headers */,
+				D11E02671B1724BC00609402 /* PMUtils.h in Headers */,
 				D110362C1ADBA3D000C46099 /* PMLogFilterViewController.h in Headers */,
 				D11036221ADBA3D000C46099 /* PMJSViewController.h in Headers */,
 				D110362A1ADBA3D000C46099 /* PMLogDataSource.h in Headers */,
+				D11E026B1B173A8900609402 /* PMNavigationController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,14 +635,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11E02681B1724BC00609402 /* PMUtils.m in Sources */,
 				D11036291ADBA3D000C46099 /* PMLogDataModel.m in Sources */,
 				D110365C1ADBA4FB00C46099 /* PMWindow.m in Sources */,
 				D11036251ADBA3D000C46099 /* PMLog.m in Sources */,
 				D110362B1ADBA3D000C46099 /* PMLogDataSource.m in Sources */,
 				D11036271ADBA3D000C46099 /* PMLogConfig.m in Sources */,
-				D110365E1ADBA4FB00C46099 /* UIWindow+Ex.m in Sources */,
 				D110362D1ADBA3D000C46099 /* PMLogFilterViewController.m in Sources */,
+				D11E026C1B173A8900609402 /* PMNavigationController.m in Sources */,
 				D11036331ADBA3D000C46099 /* PMRootViewController.m in Sources */,
+				D11E02641B17241100609402 /* UINavigationController+Ex.m in Sources */,
 				D11036631ADBA53600C46099 /* PMBaseViewController.m in Sources */,
 				D110364D1ADBA48900C46099 /* PMDataSourceFactory.m in Sources */,
 				D11036311ADBA3D000C46099 /* PMLogTableViewCell.m in Sources */,
@@ -645,7 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D14B07A91B14248A00032AB7 /* ViewController.m in Sources */,
+				D14B07A91B14248A00032AB7 /* WebViewController.m in Sources */,
 				D14B07A61B14248A00032AB7 /* AppDelegate.m in Sources */,
 				D14B07A31B14248A00032AB7 /* main.m in Sources */,
 			);
@@ -962,6 +978,7 @@
 				D14B07BF1B14248A00032AB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D14B07C31B14248A00032AB7 /* Build configuration list for PBXNativeTarget "TestTests" */ = {
 			isa = XCConfigurationList;
@@ -970,6 +987,7 @@
 				D14B07C11B14248A00032AB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

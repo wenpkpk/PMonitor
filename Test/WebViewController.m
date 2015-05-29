@@ -6,14 +6,16 @@
 //  Copyright (c) 2015年 Alipay. All rights reserved.
 //
 
-#import "ViewController.h"
-#import <PoseidonMonitor/PoseidonMonitor.h>
+#import "WebViewController.h"
+#import <objc/runtime.h>
+#import "PMService.h"
 
-@interface ViewController ()
+
+@interface WebViewController ()
 
 @end
 
-@implementation ViewController
+@implementation WebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,11 +29,20 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 
-    PMLogBiz(@"H5-Normal", @"xxx%@", @"dfddfd");
-    PMLogErrorBiz(@"H5-Error", @"xxx%@", @"dfddfd");
-    PMLogWarnBiz(@"H5-Warn", @"xxx%@", @"dfddfd");
+//    [NSClassFromString(@"PMService") performSelector:@selector(start)];
+
+    if (self.presentedViewController) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        return;
+    }
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"d"
                                                  message:@"d"
                                                 delegate:nil

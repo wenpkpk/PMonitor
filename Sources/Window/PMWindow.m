@@ -15,6 +15,7 @@
 #import "PMConfigFactory.h"
 #import "PMJSViewController.h"
 #import "PMService+Private.h"
+#import "PMNavigationController.h"
 
 @interface PMWindow () <PMMonitorViewDelegate>
 
@@ -89,10 +90,7 @@
         self.alpha = 1.0f;
     }
 
-    if (self.isNormalSize) {
-        self.isNormalSize = NO;
-        self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
-    } else {
+    if (!self.isNormalSize) {
         self.isNormalSize = YES;
         self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
     }
@@ -142,6 +140,7 @@
 
 - (void)setAlphaEx
 {
+    self.userInteractionEnabled = NO;
     [UIView animateWithDuration:1.0f
                      animations:^{
                          self.alpha = 0.3f;
@@ -157,7 +156,7 @@
                                                       self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
                                                   }
                                               } completion:^(BOOL finished) {
-                                                  
+                                                  self.userInteractionEnabled = YES;
                                               }];
                          }
                      }];
@@ -226,7 +225,7 @@
 {
     PMLogViewController *vc = [[PMLogViewController alloc] initWithDataSource:[PMDataSourceFactory getPMLogDataSource] logConfig:[PMConfigFactory getPMLogConfig]];
     vc.pmWindow = self;
-    self.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.rootViewController = [[PMNavigationController alloc] initWithRootViewController:vc];
 }
 
 - (void)monitorView:(PMMonitorView *)monitorView didClickedJS:(BOOL)_
@@ -256,12 +255,11 @@
     PMJSViewController *vc = [[PMJSViewController alloc] initWithDataSource:[PMDataSourceFactory getPMJSCallDataSource] logConfig:[PMConfigFactory getPMJSCallLogConfig]];
     vc.pmWindow = self;
     vc.wb = wb;
-    self.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.rootViewController = [[PMNavigationController alloc] initWithRootViewController:vc];
 }
 
 - (void)monitorView:(PMMonitorView *)monitorView didClickedOther:(BOOL)_
 {
-    
 }
 
 @end

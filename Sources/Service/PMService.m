@@ -40,12 +40,16 @@ static PMService *shareInstance = nil;
     dispatch_once(&onceToken, ^{
         shareInstance = [[PMService alloc] init];
         serialQueue = dispatch_queue_create("com.PoseidonMonitor.queue", DISPATCH_QUEUE_SERIAL);
+        [[NSNotificationCenter defaultCenter] addObserver:shareInstance
+                                                 selector:@selector(detectNotif:)
+                                                     name:kNotifPMDetectWebView
+                                                   object:nil];
     });
     
     return shareInstance;
 }
 
-+ (void)initialize
++ (void)load
 {
     [self shareInstance];
 }
@@ -53,6 +57,34 @@ static PMService *shareInstance = nil;
 + (BOOL)isEnable
 {
     return shareInstance.isEnable;
+}
+
+- (void)detectNotif:(NSNotification *)notif
+{
+    if (notif.object) {
+        if (!self.isEnable) {
+            [self start];
+        }
+    } else {
+        if (self.isEnable) {
+            [self stop];
+        }
+    }
+}
+
++ (void)PMLog:(NSDictionary *)userInfo
+{
+    if (userInfo.count == 0) {
+        return;
+    }
+    
+    NSString *log = [userInfo objectForKey:@"log"];
+    int logType = [[userInfo objectForKey:@"logType"] intValue];
+    NSString *fileName = [userInfo objectForKey:@"fileName"];
+    NSString *functionName = [userInfo objectForKey:@"functionName"];
+    int functionLineNumber = [[userInfo objectForKey:@"functionLineNumber"] intValue];
+    NSString *biz = [userInfo objectForKey:@"biz"];
+    [self log:log logType:logType fileName:fileName functionName:functionName functionLineNumber:functionLineNumber biz:biz];
 }
 
 - (instancetype)init
@@ -76,7 +108,7 @@ static PMService *shareInstance = nil;
 {
     if (!_pmWindow) {
         _pmWindow = [[PMWindow alloc] initWithFrame:CGRectMake(2, CGRectGetHeight([UIScreen mainScreen].bounds) - 100, 80, 80)];
-        _pmWindow.windowLevel = UIWindowLevelAlert - 0.1f;
+        _pmWindow.windowLevel = UIWindowLevelAlert + 1;
     }
     
     return _pmWindow;

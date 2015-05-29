@@ -17,4 +17,6 @@
 
 - (void)stop;
 
++ (void)PMLog:(NSDictionary *)userInfo;
+
 @end

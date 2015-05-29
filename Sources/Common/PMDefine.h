@@ -17,3 +17,5 @@ typedef enum PMLogType{
     PMLogType_Warn,
     PMLogType_Error,
 }PMLogType;
+
+#define kNotifPMLog                         @"kNotifPMLog"

@@ -127,7 +127,7 @@
             self.jsBtn.center = self.debugView.center;
             self.otherBtn.center = self.debugView.center;
             [self bringSubviewToFront:self.debugView];
-            [UIView animateWithDuration:0.3f
+            [UIView animateWithDuration:0.2f
                              animations:^{
                                  CGRect frame = self.debugView.frame;
                                  self.logBtn.frame = CGRectMake(CGRectGetMaxX(frame), CGRectGetMinY(frame) - 30, 40, 40);
@@ -141,7 +141,7 @@
                              }];
         } else {
             [self bringSubviewToFront:self.debugView];
-            [UIView animateWithDuration:0.3f
+            [UIView animateWithDuration:0.2f
                              animations:^{
                                  self.logBtn.center = self.debugView.center;
                                  self.jsBtn.center = self.debugView.center;
@@ -235,25 +235,25 @@
 
 - (void)logBtnClicked:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(monitorView:didClickedLog:)]) {
-        [self.delegate monitorView:self didClickedLog:YES];
+    if (self.showMenus && [self.delegate respondsToSelector:@selector(monitorView:didClickedLog:)]) {
         self.showMenus = NO;
+        [self.delegate monitorView:self didClickedLog:YES];
     }
 }
 
 - (void)jsBtnClicked:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(monitorView:didClickedJS:)]) {
-        [self.delegate monitorView:self didClickedJS:YES];
+    if (self.showMenus && [self.delegate respondsToSelector:@selector(monitorView:didClickedJS:)]) {
         self.showMenus = NO;
+        [self.delegate monitorView:self didClickedJS:YES];
     }
 }
 
 - (void)otherBtnClicked:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(monitorView:didClickedOther:)]) {
-        [self.delegate monitorView:self didClickedOther:YES];
+    if (self.showMenus && [self.delegate respondsToSelector:@selector(monitorView:didClickedOther:)]) {
         self.showMenus = NO;
+        [self.delegate monitorView:self didClickedOther:YES];
     }
 }
 

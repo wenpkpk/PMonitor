@@ -11,6 +11,7 @@
 // notif
 #define kNotifPMLogDataSourceDidUpdate      @"kNotifPMLogDataSourceDidUpdate"
 #define kNotifPMLogConfigDidUpadte          @"kNotifPMLogConfigDidUpadte"
+#define kNotifPMDetectWebView               @"kNotifPMDetectWebView"
 
 // constant
 #define kLogMaxFontLevel                    10

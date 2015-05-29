@@ -1,13 +1,13 @@
 //
-//  UIWindow+Ex.h
+//  UINavigationController+Ex.h
 //  PoseidonMonitor
 //
-//  Created by chenwenhong on 15-4-10.
+//  Created by chenwenhong on 15/5/28.
 //  Copyright (c) 2015年 Alipay. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIWindow (Ex)
+@interface UINavigationController (Ex)
 
 @end

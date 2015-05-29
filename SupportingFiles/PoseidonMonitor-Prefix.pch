@@ -7,5 +7,6 @@
 #import <Foundation/Foundation.h>
 #import "PMCommonDefine.h"
 #import "PMDefine.h"
+#import "PMLog.h"
 
 #endif
